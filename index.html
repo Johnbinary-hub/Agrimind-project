@@ -1,106 +1,146 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AgriMind</title>
-  <link rel="stylesheet" href="style.css" />
-  <link
-    rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-  />
-  <!-- Chart.js -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriMind AI crop Doctor</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <header>
-    <button class="hero-btn" id="langSwitcher">
-      <i class="fas fa-globe"></i> English
-    </button>
-  </header>
+  <div class="header">
+    <h2 class="logo"><span>AGRI</span>MIND</h2>
 
-  <div class="hero">
-    <div class="hero-text">
-      <h1 class="hero-h1" data-key="title">AgriMind</h1>
-      <p class="hero-p" data-key="tagline">
-        The AI Crop Doctor for Low-Connectivity Farmers
-      </p>
+    <div class="hamburger" id="hamburger">☰</div>  <!-- THIS MUST SHOW -->
+
+    <nav id="navMenu">
+        <a id="openPicker">AI diagnosis</a>
+        <a href="about.html">Market Prices</a>
+        <a href="services.html">Announcements</a>
+        <a href="contact.html">Dashboard</a>
+    </nav>
+</div>
+
+
+    <div class="hero-section">
+        <div class="hero-content">
+            <div class="ai">
+         <p class="hero-ai">  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles-icon lucide-sparkles"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z" /><path d="M20 2v4"/><path d="M22 4h-4"/><circle cx="4" cy="20" r="2"/></svg> AI-Powered Crop Diagnosis & Market Insights </p>
+         </div>
+            <h1 class="diagnosis-ai">Diagnose Crop Diseases Instantly with AI</h1>
+            <p class="hero-p">Upload a photo of your crop and get instant AI-powered diagnosis. Access live market prices and stay updated with the latest agricultural news.</p>
+            <div class="btns">
+            <button class="upload-btn" id="btnPicker">Upload Plant Photo</button>
+            <button id="learnmore-btn">Learn More</button>
+            </div>
+        </div>
     </div>
+    <div class="img-upload">
+<label class="upload-circle">
+    <input type="file" id="fileInput" hidden>
+    <svg class="icon" viewBox="0 0 24 24">
+        <path d="M12 16V4m0 0l-5 5m5-5l5 5M4 20h16" 
+              stroke="green" stroke-width="2" 
+              fill="none" stroke-linecap="round" 
+              stroke-linejoin="round"/>
+    </svg>
+</label>
+
+<img id="preview" style="max-width:150px; margin-top:20px; display:none;">
+
+        <h3>Drop your image here</h3>
+        <p>or click to browse from your device</p>
+        <!-- <p class="img-type">JPG</p>
+        <p class="img-type">PNG</p>
+        <p class="img-type">WEBP</p> -->
+    </div>
+    <div class="market-prices">
+       <div class="market-text">
+         <h2 class="market-h2">Live Market Prices</h2>
+            <p class="marketp">Stay updated with real-time market prices for various crops. Make informed decisions based on the latest data.</p>
+       </div> 
+            <div class="status">
+  <span class="dot"></span>
+  <span>Live</span>
+  <span class="separator">•</span>
+  <span><i class="fas fa-sync-alt"></i> Updated <span id="time">11:23:40 AM</span></span>
+</div>
+
+<div class="ticker-wrapper">
+  <div class="ticker">
+    <div class="item">
+      🌽 Corn <strong>195.25</strong> <span class="up">▲ +0.16
+    </div>
+    <div class="item">
+      🍚 Rice <strong>17.79</strong> <span class="down">▼ -2.83%</span>
+    </div>
+    <!-- Add more items here -->
+  </div>
+</div>
+       </div>
+<div class="price-grid">
+  <div class="carddown">
+    <img src="https://img.icons8.com/color/48/corn.png" alt="Wheat" />
+    <p class="name">Wheat <span>per bushel</span></p>
+    <h2>287.63</h2>
+    <p class="change">-0.18<br><small>(-0.06)</small></p>
   </div>
 
-  <nav class="navbar">
-    <button class="nav-item active" data-section="diagnose">
-      <i class="fa-solid fa-camera"></i> <span data-key="diagnose">Diagnose</span>
-    </button>
-    <button class="nav-item" data-section="sms">
-      <i class="fa-solid fa-bullhorn"></i> <span data-key="sms">Live announcement</span>
-    </button>
-    <button class="nav-item" data-section="weather">
-      <i class="fa-solid fa-cloud"></i> <span data-key="weather">Weather</span>
-    </button>
-    <button class="nav-item" data-section="dashboard">
-      <i class="fa-solid fa-chart-line"></i> <span data-key="dashboard">Dashboard</span>
-    </button>
-  </nav>
-<section class="container dashboard" id="dashboardSection" style="display: none;">
-  <h1 class="title" data-key="dashboard">Dashboard</h1>
-  <div class="stats">
-    <div class="card"><h2 id="totalScans">0</h2><p>Total Scans</p></div>
-    <div class="card"><h2 id="activeFarmers">0</h2><p>Active Farmers</p></div>
-    <div class="card"><h2 id="diseasesDetected">0</h2><p>Diseases Detected</p></div>
-    <div class="card"><h2 id="successRate">0%</h2><p>Success Rate</p></div>
+  <div class="carddown">
+    <img src="https://img.icons8.com/color/48/corn.png" alt="Corn" />
+    <p class="name">Corn <span>per bushel</span></p>
+    <h2>200.34</h2>
+    <p class="change">-0.48<br><small>(-0.24%)</small></p>
   </div>
-  <div class="chart-section">
-    <h3>Most Common Diseases</h3>
-    <div id="commonDiseases" class="bars"></div>
+
+  <div class="carddown">
+    <img src="https://img.icons8.com/color/48/rice-bowl.png" alt="Rice" />
+    <p class="name">Rice <span>per kg</span></p>
+    <h2>14.72</h2>
+    <p class="change">+0.09<br><small>(+0.59)</small></p>
   </div>
-  <div class="activity-section">
-    <h3>Recent Activity</h3>
-    <ul id="recentActivity" class="activity-list"></ul>
+
+  <div class="carddown">
+    <img src="https://img.icons8.com/color/48/soy.png" alt="Soybeans" />
+    <p class="name">Soybeans <span>per bushel</span></p>
+    <h2>346.45</h2>
+    <p class="change">+0.27<br><small>(+0.08%)</small></p>
   </div>
-</section>
+</div>
+<div class="announce">
+  <div class="ann-text">
+<p class="ann-p"><img src="https://img.icons8.com/ios-filled/50/megaphone.png" alt="Announcement" class="ann-img"> Stay Informed </p>
 
-  <main id="content">
-    <!-- Default Section (Diagnose) -->
-    <section class="container" id="diagnoseSection">
-      <h1 class="title" data-key="diagnoseTitle">Disease Diagnosis</h1>
-      <p class="subtitle" data-key="diagnoseSub">
-        Upload or capture an image of the affected crop
-      </p>
+</div>
+<div class="announce-text">
+  <h2>Latest Announcements</h2>
+<p class="marketp">Important updates, alerts, and news for the farming community </p>
+</div>
+<div class="announce-card">
+  <div class="announce-item">
 
-      <div class="button-group">
-        <button class="btn take-photo" id="takePhotoBtn">
-          <i class="fa-solid fa-camera"></i>
-          <span data-key="takePhoto">Take Photo</span>
-        </button>
-        <button class="btn upload-image" id="uploadImageBtn">
-          <i class="fa-solid fa-upload"></i>
-          <span data-key="upload">Upload Image</span>
-        </button> 
-      </div>
+    <h3>Weather Alert: Heavy Rain Expected</h3>
+    <p>Farmers are advised to take necessary precautions due to the forecasted heavy rainfall in the coming days.</p>
+    <span class="date">Sep 15, 2024</span>
 
-      <input
-        type="file"
-        id="cameraInput"
-        accept="image/*"
-        capture="environment"
-        style="display: none"
-      />
-      <input
-        type="file"
-        id="fileInput"
-        accept="image/*"
-        style="display: none"
-      />
+  </div>
 
-      <div id="previewContainer" class="preview-container" style="display: none">
-        <h3 data-key="preview">Preview:</h3>
-        <img id="previewImage" alt="Selected crop image" />
-      </div>
-    </section>
-  </main>
+  <div class="announce-item">
+    <h3>New Subsidy Program Launched</h3>
+    <p>The government has introduced a new subsidy program to support sustainable farming practices.</p>
+    <span class="date">Sep 10, 2024</span>
+  </div>
 
-  <script src="script.js"></script>
+  <div class="announce-item">
+    <h3>Pest Outbreak Alert</h3>
+    <p>An outbreak of locusts has been reported in several regions. Farmers should monitor their crops closely.</p>
+    <span class="date">Sep 8, 2024</span>
+  </div>
+</div>
+
+</div>
+ 
+
+
+    <script src="script.js"></script>
 </body>
 </html>

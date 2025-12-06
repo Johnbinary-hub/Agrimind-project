@@ -1,0 +1,371 @@
+body{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  position: relative;
+  z-index: 1000;
+
+
+}
+
+a{
+    margin-right: 20px;
+    color: rgb(0, 128, 0);
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 17px;
+}
+.logo{
+    margin-left: 20px;
+    color: black;
+font-family: Arial, Helvetica;
+}
+span{
+    color: #2E8B57;
+    border: white;
+    font-family: 'Courier New', Courier, monospace;
+}
+.hero-section{
+    height: calc(100vh - 80px);
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+  url('https://images.unsplash.com/photo-1501004318641-b39e6451bec6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFybWluZ3xlbnwwfHwwfHx8MA%3D%3D&auto=format&fit=crop&w=500&q=60');
+
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    text-align: center;
+    color: white;
+    padding: 0 20px;
+    color: black;
+}
+.hero-ai{
+    background-color: rgba(0, 128, 0, 0.203);
+    width: 350px;
+    height: 50px;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.ai{
+     display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+.btns{
+  display: flex;
+    justify-content: center;
+    align-items: center;   
+}
+.crop{
+    color: #2E8B57;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.hero-p{
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+}
+.upload-btn{
+    width: 200px;
+    height: 50px;
+    background-color: #2E8B57;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    margin-right: 20px;
+    cursor: pointer;
+    font-size: 16px;
+}
+#learnmore-btn{
+    width: 150px;
+    height: 50px;
+    background-color: white;
+    color: #2E8B57;
+    border: 2px solid #2E8B57;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.diagnosis-ai{
+    text-align: center;
+    color: white;
+}
+.img-upload{
+    width: 400px;
+    height: 250px;
+    border: 2px dashed #2E8B57;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 20px auto;
+}
+/* .img-upload h3{
+    margin: 10px 0;
+    color: #2E8B57;
+    display: flex;
+} */
+ .upload-circle {
+    width: 80px;
+    height: 80px;
+    background: #e8f2ec;   /* light green background */
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.upload-circle:hover {
+    transform: scale(1.05);
+}
+
+.upload-circle .icon {
+    width: 40px;
+    height: 40px;
+}
+.market-text{
+text-align: center;
+
+}
+.marketp{
+    color: rgba(0, 128, 0, 0.553);
+    text-align: center;
+}
+.status {
+  font-family: 'Arial', sans-serif;
+  color: #5f6f64;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  font-size: 14px;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  background-color: green;
+  border-radius: 50%;
+  display: inline-block;
+}
+.separator {
+  margin: 0 4px;
+}
+
+i {
+  margin-right: 3px;
+}
+.market-h2{
+    padding: 20px;
+}
+.ticker-wrapper {
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 12px;
+  width: 100%;
+}
+
+.ticker {
+  display: flex;
+  animation: scroll 15s linear infinite;
+  gap: 40px;
+  padding: 10px 0;
+}
+
+.item {
+  white-space: nowrap;
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  padding: 0 20px;
+}
+.up {
+  color: green;
+}
+
+.down {
+  color: red;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(100%); }
+  100% { transform: translateX(-100%); }
+}
+.market-prices{
+    background-color: rgba(255, 228, 196, 0.315);
+
+}
+.price-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  background-color: #059669;
+  padding: 20px;
+}
+
+.carddown {
+  background-color: white;
+  border-radius: 12px;
+  padding: 20px;
+  width: 200px;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.carddown img {
+  width: 50px;
+}
+
+.name {
+  font-weight: 600;
+  margin: 10px 0;
+}
+
+.name span {
+  font-size: 12px;
+  color: gray;
+}
+
+h2 {
+  margin: 10px 0;
+  color: #111;
+}
+
+.change {
+  font-weight: bold;
+}
+
+.change span small {
+  font-size: 12px;
+}
+.change.positive {
+  color: #059669; /* green */
+}
+
+.change.negative {
+  color: #dc2626; /* red */
+}
+.ann-img{
+    width: 30px;
+    color: green;
+    vertical-align: middle;
+    margin-right: 10px;
+}
+.ann-p{
+    text-align: center;
+    font-size: 15px;
+    font-weight: bold;
+    color: black;
+    margin-top: 20px;
+    background-color: antiquewhite;
+    width: 200px;
+    border-radius: 10px;
+}
+.ann-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+.announce-item{
+    margin-bottom: 20px;
+    box-shadow: 20px 20px 30px rgba(0,0,0,0.1);
+    padding: 10px;
+    border-left: 10px solid green;
+    border-radius: 10px;
+    margin: 20px;
+      /* transform: translateX(-50px);
+  transition: all 0.8s ease-in;
+    opacity: 0; */
+
+
+}
+.announce-text{
+  text-align: center;
+  font-weight: bold;
+ 
+  }
+  /* .announce-item.show {
+  opacity: 1;
+  transform: translateX(0);
+} */
+ /* .header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+} */
+
+/* Default: hide navigation on mobile */
+nav {
+  display: none;
+  flex-direction: column;
+  background: white;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+nav a {
+  display: block;
+  padding: 10px 0;
+  text-decoration: none;
+  color: black;
+}
+
+/* Show menu when toggled */
+nav.show {
+  display: flex;
+}
+
+/* Hamburger icon */
+.hamburger {
+  font-size: 30px;
+  font-weight: bold;
+  color: black;
+  cursor: pointer;
+  display: block;      /* THIS MAKES IT VISIBLE */
+  z-index: 999;        /* Makes sure it's above everything */
+}
+
+
+/* Desktop mode */
+@media (min-width: 768px) {
+  .hamburger {
+    display: none;
+  }
+
+  nav {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    gap: 25px;
+    box-shadow: none;
+    background: none;
+  }
+
+  nav a {
+    padding: 0;
+  }
+}
