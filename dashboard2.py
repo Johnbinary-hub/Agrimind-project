@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # -----------------------
-# CUSTOM COLOURFUL THEME
+# Theme
 # -----------------------
 st.markdown("""
 <style>
@@ -44,7 +44,7 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # -----------------------
-# SAFE USER INFO (NO HTML)
+# SAFE USER INFO
 # -----------------------
 name = "John Adebayo"
 user_id = "FRM-2024-0847"
@@ -56,7 +56,7 @@ st.markdown(
 )
 
 # -----------------------
-# KPI CARDS (Colourful)
+# KPI CARDS 
 # -----------------------
 k1, k2, k3, k4 = st.columns(4)
 
