@@ -369,3 +369,173 @@ nav.show {
     padding: 0;
   }
 }
+/* Base setup */
+.agri-footer {
+    background-color: #1a2a22; /* Very dark green/black */
+    color: #c0c0c0; /* Light gray text color */
+    padding: 30px 5%; /* Top/bottom padding and side margins */
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+}
+
+/* --- Main Content Layout (Flexbox) --- */
+.footer-content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 40px;
+    border-bottom: 1px solid rgba(192, 192, 192, 0.2); /* Light separator line */
+}
+
+.footer-section {
+    padding: 0 15px;
+    /* This makes the first section (brand-info) take up more space */
+    flex: 1;
+    min-width: 200px; /* Ensures columns don't get too narrow */
+}
+
+/* Adjusting the brand-info to take about 1.5x the width of others */
+.footer-section.brand-info {
+    flex: 1.5;
+}
+
+/* --- Headings and Links --- */
+.agri-footer h4 {
+    color: #ffffff; /* White headings */
+    margin-top: 0;
+    margin-bottom: 20px;
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.agri-footer a {
+    color: #c0c0c0;
+    text-decoration: none;
+    transition: color 0.3s;
+}
+
+.agri-footer a:hover {
+    color: #4CAF50; /* A nice green on hover */
+}
+
+/* --- Brand Info Section --- */
+.logo-area {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.agri-logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #4CAF50; /* Green logo text */
+    /* Add a small circle/icon to the left of the logo for visual resemblance */
+    position: relative;
+    padding-left: 30px;
+}
+.agri-logo::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 20px;
+    height: 20px;
+    background-color: #4CAF50;
+    border-radius: 50%;
+}
+
+/* --- Link Sections (Quick Links, Resources) --- */
+.agri-footer ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.agri-footer ul li {
+    margin-bottom: 8px;
+}
+
+/* --- Social Links --- */
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.social-links a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 35px;
+    height: 35px;
+    border: 1px solid #c0c0c0;
+    border-radius: 4px;
+    font-size: 18px;
+}
+
+.social-links a:hover {
+    background-color: #4CAF50;
+    color: #1a2a22;
+    border-color: #4CAF50;
+}
+
+/* --- Contact Us Section --- */
+.contact-us address {
+    font-style: normal; /* Removes default italic */
+}
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 15px;
+    line-height: 1.4;
+}
+.contact-item i {
+    color: #4CAF50; /* Green icons */
+    margin-right: 10px;
+    font-size: 1.1em;
+    padding-top: 2px; /* Alignment fix for text */
+}
+
+/* --- Bottom Bar --- */
+.footer-bottom-bar {
+    padding-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9em;
+}
+
+.legal-links a {
+    margin-left: 20px;
+}
+
+/* --- Mobile Responsiveness (adjusts to a single column stack) --- */
+@media (max-width: 768px) {
+    .footer-content-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-section {
+        flex: auto; /* Reset flex-grow */
+        width: 100%;
+        max-width: 400px;
+        text-align: center;
+        margin-bottom: 30px;
+        padding: 0;
+    }
+
+    .social-links, .contact-item {
+        justify-content: center;
+    }
+
+    .footer-bottom-bar {
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+    }
+
+    .legal-links a {
+        margin: 0 10px;
+    }
+}

@@ -27,17 +27,17 @@ document.querySelectorAll(".change").forEach(change => {
     change.classList.add("negative");
   }
 });
-const cards = document.querySelectorAll(".card");
+// const cards = document.querySelectorAll(".card");
 
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("show");
-    }
-  });
-}, {
-  threshold: 0.2
-});
+// const observer = new IntersectionObserver(entries => {
+//   entries.forEach(entry => {
+//     if (entry.isIntersecting) {
+//       entry.target.classList.add("show");
+//     }
+//   });
+// }, {
+//   threshold: 0.2
+// });
 
 cards.forEach(card => observer.observe(card));
 const hamburger = document.querySelector('.hamburger');
